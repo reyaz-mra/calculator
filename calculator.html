@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: rgb(247, 245, 242);
+        
+        }
+        .title{
+            margin-bottom: 21px;
+            text-align: center;
+            width: 270px;
+            background-color: rgb(0, 0, 0);
+            color: blanchedalmond;
+            border: 2px solid black;
+            padding: 10px 10px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="button"]{
+            background-color: rgb(252, 249, 249);
+            color: rgb(12, 12, 12);
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: rgb(243, 237, 211);
+            border: none;
+            box-shadow: 5px 5px 5px #b8b5b5;
+        }
+        input{
+            width: 250px;
+            
+            padding: 10px 10px;
+        }
+        input[type="button"]:hover{
+            background-color: rgb(71, 68, 68);
+            color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">MRA CALCULATOR</div>
+    <table border="0">
+        <tr>
+            <td colspan="4"><input type="text" id="result"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="clr()"></td>
+            <td><input type="button" value="%" onclick="display('%')"></td>
+            <td><input type="button" value="**" onclick="display('**')"></td>
+            <td><input type="button" value="R" onclick="open_()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="display('1')"></td>
+            <td><input type="button" value="2" onclick="display('2')"></td>
+            <td><input type="button" value="3" onclick="display('3')"></td>
+            <td><input type="button" value="/" onclick="display('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="display('4')"></td>
+            <td><input type="button" value="5" onclick="display('5')"></td>
+            <td><input type="button" value="6" onclick="display('6')"></td>
+            <td><input type="button" value="*" onclick="display('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="display('7')"></td>
+            <td><input type="button" value="8" onclick="display('8')"></td>
+            <td><input type="button" value="9" onclick="display('9')"></td>
+            <td><input type="button" value="-" onclick="display('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="display('.')"></td>
+            <td><input type="button" value="0" onclick="display('0')"></td>
+            <td><input type="button" value="=" onclick="equate('=')"></td>
+            <td><input type="button" value="+" onclick="display('+')"></td>
+        </tr>
+    </table>
+    <script>
+        function clr(){
+            document.getElementById("result").value="";
+        }
+        function display(val) {
+                document.getElementById("result").value+=val;
+        }
+        function equate() {
+           let x = document.getElementById("result").value;
+           let y = eval(x);
+           document.getElementById("result").value = y; 
+        }
+        function open_() {
+            window.open("https://www.instagram.com/reyazmra/");
+        }
+    </script>
+</body>
+</html>
